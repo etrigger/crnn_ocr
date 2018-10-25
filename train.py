@@ -1,5 +1,5 @@
 import utils
-import crnn
+import crnn_1
 import tensorflow as tf
 import numpy as np
 import random
@@ -46,7 +46,7 @@ def train(char_dict, train_x, train_y):
         seq_len = np.ones([batch_size])*max_len
 
     with tf.name_scope('train'):
-        logits = crnn.inference(x)
+        logits = crnn_1.inference(x)
         with tf.name_scope('cost'):
             loss = tf.nn.ctc_loss(labels=targets, inputs=logits, sequence_length=seq_len)
             cost = tf.reduce_mean(loss)
