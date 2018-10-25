@@ -49,4 +49,4 @@ Learning_rate:0.01
 
 迭代次数太少了，最后的测试精度还不够高。
 
-代码：[crnn_ocr](https://github.com/huimxu/crnn_ocr)
+简书：[利用CRNN来识别图片中的文字](https://www.jianshu.com/p/085c2f6ab886)
