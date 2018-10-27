@@ -12,7 +12,7 @@ n_samples = 10072
 max_len = 8
 
 batch_size = 8
-num_epoch = 20
+num_epoch = 30
 learning_rate = 0.01
 
 
