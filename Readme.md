@@ -42,9 +42,9 @@ Epoch: 10
 
 Learning_rate:0.01
 #### 实验结果：
-![CTC_LOSS](https://i.loli.net/2018/10/27/5bd4389d3aa49.png
+![CTC_LOSS](https://i.loli.net/2018/10/29/5bd6ba34aae21.png
 )
-![训练结果](https://i.loli.net/2018/10/27/5bd4389d3ab1f.png
+![训练结果](https://i.loli.net/2018/10/29/5bd6ba3d8c508.png
 )
 
 迭代次数太少了，最后的测试精度还不够高。
