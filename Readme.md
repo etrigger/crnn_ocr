@@ -38,7 +38,7 @@ Batch_size: 8
 
 Step:1259(1259*8 = 10072)
 
-Epoch: 10
+Epoch: 40
 
 Learning_rate:0.01
 #### 实验结果：
