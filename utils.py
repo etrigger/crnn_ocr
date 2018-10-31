@@ -7,24 +7,6 @@ import tensorflow as tf
 # path = '.\part2\\'
 
 
-def cal_rec_acc(target, rec):
-    target = tf.cast(target, tf.int32)
-    rec = tf.cast(rec, tf.int32)
-    len = target.get_shape()[0].values
-
-    sum = tf.constant(0)
-    temp = tf.constant(1)
-
-    if target.shape[1] == rec.shape[1]:
-        for i in range(len):
-            sum = tf.cond(tf.equal(target[i], rec[i]), lambda: tf.add(sum, temp), lambda: sum)
-        acc = sum / len
-    else:
-        acc = tf.constant(0)
-
-    return acc
-
-
 def sparse_tuple_from(sequences, dtype=np.int32):
 
     indices = []
