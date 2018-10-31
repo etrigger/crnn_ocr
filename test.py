@@ -17,17 +17,14 @@ batch_size = 1
 def next_batch(train_x, train_y, step, order):
 
     rnd_indices = order[batch_size*step:batch_size*(step+1)]
+    
     x = []
     y = []
+    
     for i in rnd_indices:
         x.append(train_x[i])
-    # batch_x = x
     batch_x = [np.reshape(xi, [image_width, image_height, 1]).astype(np.float32) for xi in x]
-    # start = step * batch_size
-    # end = (step + 1) * batch_size - 1
-    # x = train_x[start:end]
-    # batch_x = [np.reshape(xi, [image_width, image_height, 1]).astype(np.float32) for xi in x]
-    # y = train_y[start:end]
+
     for i in rnd_indices:
         y.append(train_y[i])
     batch_y = utils.sparse_tuple_from(y)
@@ -39,12 +36,9 @@ def main(_):
     char_dict = utils.get_char_dict(path)
     test_x, test_y = utils.get_data(path, char_dict)
 
-    print('开始测试 ...')
-
     with tf.Session() as sess:
         saver = tf.train.import_meta_graph('./model/model.ckpt-40992.meta')
         saver.restore(sess, "./model/model.ckpt-40992")
-        print('模型加载成功...')
 
         graph = tf.get_default_graph()
         x = graph.get_tensor_by_name('input/Placeholder:0')
